@@ -24,7 +24,11 @@ export default class App extends React.Component {
     };
   }
 
-  authorizeAccount = () => {
+
+    
+
+
+  render() {
     GoogleFit.authorize((err, result) => {
       if(err) {
           dispatch('AUTH ERROR');
@@ -32,8 +36,6 @@ export default class App extends React.Component {
       }
       dispatch('AUTH SUCCESS');
     });
-  }
-  render() {
     return (
       <View behavior="padding" style={styles.container}>
         <KeyboardAvoidingView style={styles.container}>
@@ -51,7 +53,7 @@ export default class App extends React.Component {
           </View>
           <TouchableOpacity
                 style={styles.buttonContainer}
-                onPress={this.authorizeAccount}
+                //onPress={this.authorizeAccount}
               >
                 <Text style={styles.buttonText}>LOGIN</Text>
           </TouchableOpacity>
